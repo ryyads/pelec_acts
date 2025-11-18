@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>students</title>
+</head>
+<body>
+        <h1>Student list</h1>
+            {% comment %} <ul>
+                {%for student in student%}
+                    <li>{{student.name|upper}}
+                        - {{student.email|lower}}
+                        -{{student.date_birth}}
+                        -{{student.address}}
+                        -{{student.student_id}}</li>
+                {%empty%}
+                    <li> no students found</li>
+                {%endfor%}
+        </ul> {% endcomment %}
+
+        <table >
+            <tr>
+                <th>student </th>
+                <th>email </th>
+                <th>dob </th>
+                <th>address </th>
+                <th>student id </th>
+            </tr>
+            {%for student in student%}
+            <tr>
+                <td>{{student.name|upper}}</td>
+                <td>{{student.email|lower}}</td>
+                <td>{{student.date_birth}}</td>
+                <td>{{student.address}}</td>
+                <td>{{student.student_id}}</td>
+            </tr>
+            {%empty%}
+                    <li> no students found</li>
+            {%endfor%}
+        </table>
+</body>
+</html>
+{% comment %} style='margin:auto;border:2px solid black; wi' {% endcomment %}

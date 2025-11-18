@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+</head>
+<body>
+    <section>
+        <h1>Student list</h1>
+            <ul>
+                {%for student in student%}
+                    <li>{{student.name|upper}}
+                        - {{student.email|lower}}
+                        -{{student.date_birth}}
+                        -{{student.address}}
+                        -{{student.student_id}}</li>
+                {%empty%}
+                    <li> no students found</li>
+                {%endfor%}
+        </ul>
+    </section>
+    <section>
+        <h1>Subject List</h1>
+        <ul>
+            {%for subject in subject%}
+                <li>{{subject.name|upper}}
+                    -{{subject.no_units}}
+                    -{{subject.semesters}}
+                    -{{subject.subject_id}}
+                    -{{subject.schedule}}</li>
+            {%empty%}
+                <li> no subject found</li>
+            {%endfor%}
+    </ul>
+    </section>
+    <section>
+        <h1>Schedules</h1>
+        <ul>
+            {%for schedule in schedule%}
+                <li>{{schedule.room|upper}}
+                    -{{schedule.instructor_id}}
+                    -{{schedule.students_per_dept}}
+                    -{{schedule.subject_id}}
+                    -{{schedule.day_time}}</li>
+            {%empty%}
+                <li> no schedule found</li>
+            {%endfor%}
+    </ul>
+    </section>
+    <section>
+        <h1>Instructors List</h1>
+        <ul>
+            {%for instructor in instructor%}
+                <li>{{instructor.name|upper}}
+                    -{{instructor.email|lower}}
+                    -{{instructor.phone_number}}
+                    -{{instructor.department|upper}}
+                    -{{instructor.instructor_id}}</li>
+            {%empty%}
+                <li> no students found</li>
+            {%endfor%}
+    </ul>
+    </section>
+    <section>
+        <h1>Courses</h1>
+        <ul>
+            {%for course in course%}
+                <tr>
+                    <td>{{course.course_id|upper}}</td>
+                    <td>{{course.head_of_department|upper}}</td>
+                    <td>{{course.no_of_professors|upper}}</td>
+                    <td>{{course.no_of_students|upper}}</td>
+                    <td>{{course.units_per_sem|upper}}</td>
+                </tr>
+            {%empty%}
+                <li> no courses found</li>
+            {%endfor%}
+    </ul>
+    </section>
+</body>
+</html>

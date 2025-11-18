@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>schedules</title>
+</head>
+<body>
+    <h1>Schedules</h1>
+        <ul>
+            {%for schedule in schedule%}
+                <li>{{schedule.room|upper}}
+                    -{{schedule.instructor_id}}
+                    -{{schedule.students_per_dept}}
+                    -{{schedule.subject_id}}
+                    -{{schedule.day_time}}</li>
+            {%empty%}
+                <li> no schedule found</li>
+            {%endfor%}
+    </ul>
+    
+</body>
+</html>

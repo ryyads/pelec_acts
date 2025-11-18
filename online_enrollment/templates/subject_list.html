@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>subjects</title>
+</head>
+<body>
+    <h1>Subject List</h1>
+        <ul>
+            {%for subject in subject%}
+                <li>{{subject.name|upper}}
+                    -{{subject.no_units}}
+                    -{{subject.semesters}}
+                    -{{subject.subject_id}}
+                    -{{subject.schedule}}</li>
+            {%empty%}
+                <li> no subject found</li>
+            {%endfor%}
+    </ul>
+    
+</body>
+</html>

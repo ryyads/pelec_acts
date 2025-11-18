@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>course</title>
+</head>
+<body>
+    <h1>Courses</h1>
+        <ul>
+            {%for course in course%}
+                <li>
+                   {{course.course_id|upper}} -
+                   {{course.head_of_department|upper}}- 
+                   {{course.no_of_professors}}- 
+                   {{course.no_of_students}}- 
+                   {{course.units_per_sem}} 
+                </li>
+            {%empty%}
+                <li> no courses found</li>
+            {%endfor%}
+    </ul>
+    
+</body>
+</html>

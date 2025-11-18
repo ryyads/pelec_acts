@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instructors</title>
+</head>
+<body>
+    <h1>Instructors List</h1>
+        <ul>
+            {%for instructor in instructor%}
+                <li>{{instructor.name|upper}}
+                    -{{instructor.email|lower}}
+                    -{{instructor.phone_number}}
+                    -{{instructor.department|upper}}
+                    -{{instructor.instructor_id}}</li>
+            {%empty%}
+                <li> no students found</li>
+            {%endfor%}
+    </ul>
+    
+</body>
+</html>

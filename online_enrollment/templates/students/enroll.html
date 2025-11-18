@@ -1,0 +1,18 @@
+<h2 style= 'text-align:center;background-color:gray;padding:5px;color:white;'> STUDENT ENROLLMENT FORM </h2>
+<form method='POST' novalidate>
+    {%csrf_token%}
+
+    {% for field in form%}
+        <div class='mb-3', style= 'text-align:center;'>
+            <label>{{field.label}}</label>
+            {{field}}
+            {% if field.errors%}
+                <div>{{field.errors|striptags}}</div>
+            {%endif%}
+        </div>
+    {%endfor%}
+
+    <div style= 'text-align:center;padding:5px;'>
+        <button type='submit', style='border-radius:12px;background-color:gray;' >ENROLL NOW</button>
+    </div>
+</form>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER ACCOUNT</title>
+</head>
+<body>
+    <h1>register here</h1>
+
+    {%if messages%}
+        {%for message in messages%}
+        <div class='alert alert-{{message.tags}}'>{{message}} </div>
+        {%endfor%}
+    {%endif%}
+
+    <form method='POST'>
+        {%csrf_token%}
+        {{form.as_p}}
+        <button class='btn btn-primary w-100 mt-3'>registyer</button>
+
+    </form>
+
+    <p class='text-center mt-3'>
+        already have an account?<a href='{% url 'login_user'%}'>login</a>
+    </p>
+</body>
+</html>

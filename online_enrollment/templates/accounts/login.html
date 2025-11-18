@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN ACCOUNT</title>
+</head>
+<body>
+    <h1>login here</h1>
+
+    {%if messages%}
+        {%for message in messages%}
+        <div class='alert alert-{{message.tags}}'>{{message}} </div>
+        {%endfor%}
+    {%endif%}
+
+    <form method='POST'>
+        {%csrf_token%}
+        {{form.as_p}}
+        <button class='btn btn-primary w-100 mt-3'>login</button>
+
+    </form>
+
+    <p class='text-center mt-3'>
+        dont have an account?<a href='{% url 'register_user' %}'>register</a>
+    </p>
+</body>
+</html>
