@@ -81,7 +81,7 @@ def register_user(request):
         form=RegisterForm()
     return render(request, 'accounts/register.html',{'form':form})
 
-def login_user(request):
+def login(request):
     if request.method =='POST':
         form=AuthenticationForm(request,data=request.POST)
         if form.is_valid():
