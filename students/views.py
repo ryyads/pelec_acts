@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .models import Inventory
+from .serializers import StudentSerializer
 
-def students(request):
-    return HttpResponse('welcome to the students list')
-def students1(request):
-    return HttpResponse('raeven maranan')
-def students2(request):
-    return HttpResponse('report')
+class StudentViewSet(viewsets.ModelViewSet):
+    queryset=Inventory.objects.all()
+    serializer_class=StudentSerializer
+
+
+    
 # Create your views here.

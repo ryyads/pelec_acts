@@ -1,0 +1,9 @@
+
+{%block title%}student profile{%endblock%}
+{%block content%}
+    {% for inventory in inventory%}
+
+        <p>Age:{{ inventory.age }}</p>
+        <p>Course:{{ inventory.course }}</p>
+    {%endfor%}
+{%endblock%}
